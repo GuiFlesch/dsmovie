@@ -1,10 +1,9 @@
 import Pagination from "components/Pagination"
-import MovieScore from "components/MovieScore";
 import MovieCard from "components/MovieCard";
 
 function Listing() {
+    
     return (
-
         <>
             <Pagination />
 
