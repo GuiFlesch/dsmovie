@@ -30,13 +30,6 @@ function Listing() {
             });
     }, [pageNumber]);
 
-
-    axios.get(`${BASE_URL}/movies?size=12&page=1`)
-        .then(response => {
-            const data = response.data as MoviePage;
-            setPageNumber(data.number)
-        })
-
     return (
         <>
 
@@ -44,10 +37,11 @@ function Listing() {
 
             <div className="container">
                 <div className="row">
-                    {page.content.map(movie =>
-                    (<div key={movie.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
+                    {page.content.map(movie => (
+                    <div key={movie.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                         <MovieCard movie={movie} />
-                    </div>)
+                    </div>
+                    )
                     )}
                 </div>
             </div>
